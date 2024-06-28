@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct FruitDetailView: View {
+    var fruit: Fruit
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+                .foregroundColor(fruit.tint.opacity(0.45))
+            Text(fruit.emoji)
+                .font(.system(size: 90))
+        }
     }
 }
 
 #Preview {
-    FruitDetailView()
+    FruitDetailView(fruit: .avocado)
 }
